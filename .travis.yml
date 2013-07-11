@@ -2,11 +2,14 @@
 bundler_args: --without development --path=~/.bundle --binstubs
 language: ruby
 rvm:
-- 2.0.0
+rvm:
+  - "1.9.2"
+  - "1.9.3"
+  - "2.0.0"
 env:
   global:
   - RAILS_ENV=test
-script: bin/rake tests
+script: bin/rake test
 before_install:
 - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 

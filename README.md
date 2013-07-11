@@ -2,8 +2,6 @@
 
 * note: pickaxe requires ruby 1.9.3+
 
-
-
 Pickaxe is a wrapper for bundler because bundler doesn't set up Minitest. Gems without tests are sad!
 
 Pickaxe on [Rubygems.org] (https://rubygems.org/gems/pickaxe)
