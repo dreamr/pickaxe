@@ -1,24 +1,20 @@
 # Pickaxe
 
-TODO: Write a gem description
+* note: pickaxe requires ruby 1.9.3+
+
+Pickaxe is a wrapper for bundler because bundler doesn't set up Minitest. Gems without tests are sad!
+
+Pickaxe on [Rubygems.org] (https://rubygems.org/gems/pickaxe)
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'pickaxe'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install pickaxe
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ pickaxe gem_name
+
+This will run bundle gem gem_name and then set that shit up with tests!
 
 ## Contributing
 

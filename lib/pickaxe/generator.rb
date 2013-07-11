@@ -1,4 +1,5 @@
 require 'thor/group'
+require 'active_support/inflector'
 
 module Pickaxe
   class Generator < Thor::Group
@@ -17,11 +18,30 @@ module Pickaxe
     def setup_project
       remove_file "#{gem_name}/Rakefile"
       remove_file "#{gem_name}/Gemfile"
+      
+      directory "test"
 
-      template 'test_helper.tt',  "#{gem_name}/tests/test_helper.rb"
+      template 'test_helper.tt',  "#{gem_name}/test/test_helper.rb"
       template 'Guardfile.tt',    "#{gem_name}/Guardfile"
       template 'Gemfile.tt',      "#{gem_name}/Gemfile"
       template 'Rakefile.tt',     "#{gem_name}/Rakefile"
+
+      inside gem_name do
+        create_file "test/#{gem_name}_test.rb" do
+          <<-EOS
+require 'test_helper'
+
+describe #{gem_name.classify} do
+  subject { #{gem_name.classify} }
+
+end
+EOS
+        end
+
+        append_to_file "test/test_helper.rb" do
+          "require '#{gem_name}'"
+        end
+      end
       
       bundle
 
