@@ -6,7 +6,7 @@ rvm:
 env:
   global:
   - RAILS_ENV=test
-script: bin/rake all_tests
+script: bin/rake tests
 before_install:
 - 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
 
