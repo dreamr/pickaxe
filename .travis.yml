@@ -1,0 +1,13 @@
+---
+bundler_args: --without development --path=~/.bundle --binstubs
+language: ruby
+rvm:
+- 2.0.0
+env:
+  global:
+  - RAILS_ENV=test
+script: bin/rake all_tests
+before_install:
+- 'echo ''gem: --no-ri --no-rdoc'' > ~/.gemrc'
+
+
