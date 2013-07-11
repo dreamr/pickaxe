@@ -1,6 +1,8 @@
 # Pickaxe
-
 * note: pickaxe requires ruby 1.9.3+
+
+[![Build Status](https://travis-ci.org/dreamr/pickaxe.png)](https://travis-ci.org/dreamr/pickaxe)
+
 
 Pickaxe is a wrapper for bundler because bundler doesn't set up Minitest. Gems without tests are sad!
 
